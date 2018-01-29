@@ -2,16 +2,16 @@ language: bash
 services: docker
 
 env:
-  - VERSION=2.0 VARIANT=alpine
-  - VERSION=2.1 VARIANT=alpine
-  - VERSION=2.2 VARIANT=alpine
-  - VERSION=2.3 VARIANT=alpine
-  - VERSION=2.4 VARIANT=alpine
+  - version=2.0 variant=alpine
+  - version=2.1 variant=alpine
+  - version=2.2 variant=alpine
+  - version=2.3 variant=alpine
+  - version=2.4 variant=alpine
 
 before_script:
   - env | sort
-  - cd "$VERSION/$VARIANT"
-  - image="eclecticiq/ansible:$VERSION-$VARIANT"
+  - cd "$version/$variant"
+  - image="eclecticiq/ansible:$version"
 
 script:
   - travis_retry docker build -t "$image" .
