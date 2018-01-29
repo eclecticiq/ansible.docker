@@ -1,0 +1,24 @@
+language: bash
+services: docker
+
+env:
+  - VERSION=2.0 VARIANT=alpine
+  - VERSION=2.1 VARIANT=alpine
+  - VERSION=2.2 VARIANT=alpine
+  - VERSION=2.3 VARIANT=alpine
+  - VERSION=2.4 VARIANT=alpine
+
+before_script:
+  - env | sort
+  - cd "$VERSION/$VARIANT"
+  - image="eclecticiq/ansible:$VERSION-$VARIANT"
+
+script:
+  - travis_retry docker build -t "$image" .
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker tag eclecticiq/ansible:$image eclecticiq/ansible:latest;
+    docker push eclecticiq/ansible;
+    fi
