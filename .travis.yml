@@ -19,6 +19,5 @@ script:
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-    docker tag eclecticiq/ansible:$image eclecticiq/ansible:latest;
     docker push eclecticiq/ansible;
     fi
