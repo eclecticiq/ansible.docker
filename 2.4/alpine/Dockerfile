@@ -12,5 +12,12 @@ RUN apk --no-cache --update add --virtual .deps \
   make \
   musl-dev \
   python2-dev \
-  && pip install ansible==$ANSIBLE_VERSION \
+  && pip install \
+  ansible==$ANSIBLE_VERSION \
+  apache-libcloud \
+  boto \
+  boto3 \
+  docker-py \
+  molecule \
+  shade \
   && apk del .deps
