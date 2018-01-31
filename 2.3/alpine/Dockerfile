@@ -21,6 +21,3 @@ RUN apk --no-cache --update add --virtual .deps \
   molecule \
   shade \
   && apk del .deps
-
-ENTRYPOINT ["ansible"]
-CMD ["--help"]
