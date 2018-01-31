@@ -17,6 +17,7 @@ RUN apk --no-cache --update add --virtual .deps \
   apache-libcloud \
   boto \
   boto3 \
+  cryptography \
   docker-py \
   molecule \
   shade \
