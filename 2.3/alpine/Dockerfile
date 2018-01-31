@@ -19,5 +19,6 @@ RUN apk --no-cache --update add --virtual .deps \
   boto3 \
   cryptography \
   docker-py \
+  pycrypto \
   shade \
   && apk del .deps
