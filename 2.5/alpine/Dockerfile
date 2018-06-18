@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-ENV ANSIBLE_VERSION 2.5.1
+ENV ANSIBLE_VERSION 2.5.5
 
 RUN apk --no-cache --update add \
   libssl1.0 \
