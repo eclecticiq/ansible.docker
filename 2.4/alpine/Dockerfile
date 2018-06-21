@@ -23,6 +23,7 @@ RUN apk --no-cache --update add --virtual .deps \
   boto3 \
   cryptography \
   docker-py \
+  jmespath \
   packet-python \
   pycrypto \
   shade \
