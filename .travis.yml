@@ -8,6 +8,7 @@ env:
   - version=2.3 variant=alpine
   - version=2.4 variant=alpine
   - version=2.5 variant=alpine
+  - version=2.6 variant=alpine
 
 before_script:
   - env | sort
