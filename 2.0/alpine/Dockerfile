@@ -4,7 +4,7 @@ ENV ANSIBLE_VERSION 2.0.1.0
 
 RUN apk --no-cache --update add \
   libssl1.0 \
-  openssh \
+  openssh-client \
   python2 \
   py2-pip
 
