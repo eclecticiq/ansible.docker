@@ -3,10 +3,15 @@ FROM alpine
 ENV ANSIBLE_VERSION 2.3.3.0
 
 RUN apk --no-cache --update add \
+  bzip2 \
+  gzip \
   libssl1.0 \
   openssh-client \
   python2 \
-  py2-pip
+  py2-pip \
+  tar \
+  unzip \
+  xz
 
 RUN apk --no-cache --update add --virtual .deps \
   gcc \
