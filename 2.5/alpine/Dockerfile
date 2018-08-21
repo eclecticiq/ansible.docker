@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine
 
 ENV ANSIBLE_VERSION 2.5.5
 
