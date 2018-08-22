@@ -33,3 +33,7 @@ RUN apk --no-cache --update add --virtual .deps \
   pycrypto \
   shade \
   && apk del .deps
+
+RUN adduser -D ansible
+
+USER ansible
