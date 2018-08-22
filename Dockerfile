@@ -1,6 +1,6 @@
 FROM alpine
 
-ENV ANSIBLE_VERSION 2.2.3.0
+ARG VERSION
 
 RUN apk --no-cache --update add \
   bzip2 \
@@ -22,7 +22,7 @@ RUN apk --no-cache --update add --virtual .deps \
   musl-dev \
   python2-dev \
   && pip install \
-  ansible==$ANSIBLE_VERSION \
+  ansible==$VERSION \
   apache-libcloud \
   boto \
   boto3 \
