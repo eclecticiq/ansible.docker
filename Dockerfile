@@ -21,6 +21,7 @@ RUN apk --no-cache --update add --virtual .deps \
   make \
   musl-dev \
   python2-dev \
+  && pip install --upgrade pip \
   && pip install \
   ansible==$VERSION \
   apache-libcloud \
